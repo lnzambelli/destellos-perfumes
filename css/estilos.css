@@ -1,7 +1,11 @@
 .footerContenedor {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  color: #fff; }
+  .footerContenedor a {
+    text-decoration: none;
+    color: #fff; }
 
 .carousel {
   margin-bottom: 16px; }
