@@ -11,7 +11,7 @@ class Perfume{
 
 //OBTENER DATOS DE LOS PERFUMES:
 
-const  obtenerDatos= () =>{
+const obtenerDatos= () =>{
     do{
         marca = prompt("ingrese marca del perfume");
         nombre = prompt("ingrese nombre del perfume");
@@ -32,20 +32,24 @@ const  obtenerDatos= () =>{
 const crearProducto =() =>{
     let sumaProductos = 0;
     let ingresarOtro = true;
+    const arrayPerfumes = [];
     while(ingresarOtro){
         let newPerfume = obtenerDatos();
-        for(let perfume in newPerfume){
-            document.write(newPerfume[perfume]+"<br>")
-        }
+        arrayPerfumes.push(newPerfume);
         sumaProductos =sumaProductos+newPerfume.precio;
-        document.write("------------------------"+"<br>");
-        document.write("TOTAL ACUMULADO: $"+sumaProductos+"<br>");
-        document.write("------------------------"+"<br>");
+        
         ingresarOtro = confirm("nuevo producto??");
     }
     if (sumaProductos >=500){
         alert("ENVIO GRATIS POR HACER UNA COMPRA MAYO A $500");
     }
+    
+    for(let perfume of arrayPerfumes){
+        document.write(perfume.nombre+": $"+perfume.precio+"<br>")
+    }
+    document.write("------------------------"+"<br>");
+    document.write("TOTAL: $"+sumaProductos+"<br>");
+    document.write("------------------------"+"<br>");
 }
 
 crearProducto()

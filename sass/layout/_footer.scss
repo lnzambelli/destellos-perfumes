@@ -1,10 +1,218 @@
-.footerContenedor{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #fff;
-    a{
-        text-decoration: none;
-        color: #fff;
+@import "../utilities/mixins";
+
+footer{
+    background-color: #212529;
+    padding-top: 2px;
+    .contenedorFooter{
+        .footerInformativo{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            justify-content: center;
+            align-content: center;
+            grid-row-gap: 16px;
+            grid-column-gap: 16px;
+            grid-template-areas:"footerContactos footerEnlaces footerSuscripcion"
+                                "footerReservados footerReservados footerReservados"; 
+            
+            .footerContactos{
+                grid-area: footerContactos;
+                .titulo{ 
+                    @include estiloTituloFooter;
+                }
+                .subtitulo{
+                    @include estiloSubtituloFooter;
+                }
+                .footerRedes{
+                    display: flex;
+                    justify-content: center;
+                    a{
+                        &:hover{
+                            i{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }                    
+            }
+
+            .footerEnlaces{
+                grid-area: footerEnlaces;
+                display: flex;
+                flex-direction: column;
+                .titulo{
+                    @include estiloTituloFooter;
+                }
+                .subtitulo{
+                    @include estiloSubtituloFooter;
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: #fff;
+                    padding-bottom: 4px;
+                    &:hover{
+                        text-decoration:underline;
+                    }
+                }                  
+            }
+
+            .footerSuscripcion{
+                grid-area: footerSuscripcion;
+                .titulo{
+                    @include estiloTituloFooter;
+                    margin-bottom: 8px;
+                }
+                .formularioSuscripcion{
+                    width: 50%;
+                    margin: auto;
+                }                    
+            }
+
+            .footerReservados{
+                grid-area: footerReservados;
+                text-align: center;
+                padding-top: 2px;
+                p{
+                    padding-top: 4px;
+                    margin-bottom: 0;
+                    font-size: 12px;
+                    color: #fff;
+                }               
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    footer{
+        .contenedorFooter{
+           padding: 0 16px;
+            .footerInformativo{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto ;
+                justify-content: center;
+                align-content: center;
+                grid-row-gap: 16px;
+                grid-column-gap: 16px;
+                grid-template-areas:"footerContactos footerEnlaces" 
+                                    "footerSuscripcion footerSuscripcion" 
+                                    "footerReservados footerReservados"; 
+                
+                .footerContactos{
+                    grid-area: footerContactos;
+                    .titulo{
+                        @include estiloTituloFooter;
+                    }
+                    .subtitulo{
+                        @include estiloSubtituloFooter;
+                    }
+                    .footerRedes{
+                        display: flex;
+                        justify-content: center;
+                        a{
+                            &:hover{
+                                i{
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }                    
+                }
+    
+                .footerEnlaces{
+                    grid-area: footerEnlaces;
+                    display: flex;
+                    flex-direction: column;
+                    .titulo{
+                        @include estiloTituloFooter;
+                    }
+                    .subtitulo{
+                        @include estiloSubtituloFooter;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: #fff;
+                        margin-bottom: 4px;
+                    }                  
+                }
+    
+                .footerSuscripcion{
+                    grid-area: footerSuscripcion;
+                    display: none;      
+                }
+    
+                .footerReservados{
+                    grid-area: footerReservados;
+                    text-align: center;
+                    padding-top: 2px;
+                    p{
+                        margin-bottom: 0;
+                        color: #fff;
+                    } 
+                                     
+                }
+            }
+        
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    footer{
+        .contenedorFooter{
+           padding: 0 16px;
+            .footerInformativo{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto ;
+                justify-content: center;
+                align-content: center;
+                grid-row-gap: 16px;
+                grid-column-gap: 16px;
+                grid-template-areas:"footerContactos footerContactos" 
+                                    "footerSuscripcion footerSuscripcion" 
+                                    "footerReservados footerReservados"; 
+                
+                .footerContactos{
+                    grid-area: footerContactos;
+                    .titulo{
+                        @include estiloTituloFooter;
+                    }
+                    .subtitulo{
+                        @include estiloSubtituloFooter;
+                    }
+                    .footerRedes{
+                        display: flex;
+                        justify-content: center;
+                        a{
+                            &:hover{
+                                i{
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }                    
+                }
+    
+                .footerEnlaces{
+                    grid-area: footerEnlaces;
+                    display: none;                              
+                }
+    
+                .footerSuscripcion{
+                    grid-area: footerSuscripcion;
+                    display: none;             
+                }
+    
+                .footerReservados{
+                    grid-area: footerReservados;
+                    text-align: center;
+                    padding-top: 2px;
+                    p{
+                        margin-bottom: 0;
+                        color: #fff;
+                    }                     
+                }
+            }
+        }
     }
 }

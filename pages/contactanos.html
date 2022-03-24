@@ -41,7 +41,7 @@
               </li>
             </ul>
             <div class="d-flex">
-              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-cart4"></i></button>
+              <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-cart4"></i></button>
             </div>
           </div>
         </div>
@@ -50,6 +50,18 @@
 
     <!-- contenido principal: main -->
     <main>
+       <!-- seccion canvas para agregar productos -->
+       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Mi Carrito</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>Lista de productos</p>
+          </div>
+      </div>
+
+      <!-- seccion contactos -->
       <h1 class="sección_titulo text-center">Comunicate con Nosotros</h1>
       <section class="d-flex justify-content-center m-4">
         <form class="col g-3 container">
@@ -68,51 +80,56 @@
           <button type="button" class="btn btn-dark">Enviar</button>
         </form>
       </section>
-      
-          
+            
     </main>
       
-    <!-- pie de pagina: footer -->
+   <!-- pie de pagina: footer -->
     <footer>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="footerContenedor container">
-          <div class="">
-              <h6>INFORMACIÓN</h6>
-              <ul>
-                <li class="">
-                  <a href="./../index.html">Home</a>
-                </li>
-                  <li class="">
-                      <a href="./nosotros.html">Nosotros</a>
-                  </li>
-                  <li class="">
-                      <a href="./productos.html">Productos</a>
-                  </li>
-                  <li class="">
-                    <a href="./contactanos.html">Contactanos</a>
-                  </li>
-              </ul>
-          </div>
-          <div class="">
-              <h6>SEGUINOS</h6>
-              <div class="footer_redes">
-                  <a href="#">
-                    <i class="bi bi-facebook"></i>
-                  </a>
-                  <a href="#">
-                    <i class="bi bi-instagram"></i>
-                  </a>
-              </div>
-          </div>
-          <div class="">
-              <h6>CONTACTANOS</h6>
-              <ul>
-                  <li>Teléfono: 123456</li>
-                  <li>Email: destellos@gmail.com</li>
-              </ul>
-          </div>
-      </div>
-      </nav>
+        <div class="container-fluid contenedorFooter">
+            <nav class="navbar navbar-light container-fluid  footerInformativo">
+                
+                <div class="footerContactos">
+                  <p class="titulo">DESTELLOS</p>
+                  <p class="subtitulo">destellos@gmail.com</p>
+                  <p class="subtitulo">3492123456</p>
+                  <p class="subtitulo">Rafaela, Santa Fe</p>
+                  <div class="footerRedes d-flex">
+                    <a href="https://www.facebook.com/" target="_blank"> <i class="bi bi-facebook p-2"></i> </a>
+                    <a href="https://www.instagram.com/?hl=es-la" target="_blank">  <i class="bi bi-instagram p-2"></i> </a>
+                    <a href="https://twitter.com/?lang=es" target="_blank"> <i class="bi bi-twitter p-2"></i></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"> <i class="bi bi-whatsapp p-2"></i></a>
+                  </div>
+                </div>
+
+                <div class="footerEnlaces">
+                  <p class="titulo">ENLACES</p>
+                  <a  href="./../index.html" class="subtitulo">Home</a>
+                <a  href="./nosotros.html" class="subtitulo">Nosotros</a>
+                <a  href="./productos.html" class="subtitulo">Productos</a>
+                <a  href="./contactanos.html" class="subtitulo">Contactos</a>
+                </div>
+
+                <div class="footerSuscripcion">
+                  <p class="titulo">SUSCRIPCIÓN</p>
+                  <form action="" class="formularioSuscripcion">
+                      <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre">
+                      </div>
+                      <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                      <button type="button" class="btn btn-secondary w-100">Suscribirse</button>
+                  </form>
+                </div> 
+                
+                <div class="footerReservados">
+                  <hr style="color: #fff;">
+                  <p >
+                    @2022 Destellos | lnzambelli@gmail.com
+                  </p> 
+                </div>
+            </nav>
+        </div>
     </footer>
 
     <!-- link de css bootstrap-->

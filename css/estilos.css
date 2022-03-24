@@ -1,11 +1,168 @@
-.footerContenedor {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: #fff; }
-  .footerContenedor a {
-    text-decoration: none;
-    color: #fff; }
+footer {
+  background-color: #212529;
+  padding-top: 2px; }
+  footer .contenedorFooter .footerInformativo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-content: center;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-areas: "footerContactos footerEnlaces footerSuscripcion" "footerReservados footerReservados footerReservados"; }
+    footer .contenedorFooter .footerInformativo .footerContactos {
+      grid-area: footerContactos; }
+      footer .contenedorFooter .footerInformativo .footerContactos .titulo {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        color: #fff; }
+      footer .contenedorFooter .footerInformativo .footerContactos .subtitulo {
+        font-size: 12px;
+        text-align: center;
+        color: #fff; }
+      footer .contenedorFooter .footerInformativo .footerContactos .footerRedes {
+        display: flex;
+        justify-content: center; }
+        footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+          color: #fff; }
+    footer .contenedorFooter .footerInformativo .footerEnlaces {
+      grid-area: footerEnlaces;
+      display: flex;
+      flex-direction: column; }
+      footer .contenedorFooter .footerInformativo .footerEnlaces .titulo {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        color: #fff; }
+      footer .contenedorFooter .footerInformativo .footerEnlaces .subtitulo {
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        color: #fff;
+        padding-bottom: 4px; }
+        footer .contenedorFooter .footerInformativo .footerEnlaces .subtitulo:hover {
+          text-decoration: underline; }
+    footer .contenedorFooter .footerInformativo .footerSuscripcion {
+      grid-area: footerSuscripcion; }
+      footer .contenedorFooter .footerInformativo .footerSuscripcion .titulo {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 8px; }
+      footer .contenedorFooter .footerInformativo .footerSuscripcion .formularioSuscripcion {
+        width: 50%;
+        margin: auto; }
+    footer .contenedorFooter .footerInformativo .footerReservados {
+      grid-area: footerReservados;
+      text-align: center;
+      padding-top: 2px; }
+      footer .contenedorFooter .footerInformativo .footerReservados p {
+        padding-top: 4px;
+        margin-bottom: 0;
+        font-size: 12px;
+        color: #fff; }
+
+@media (max-width: 768px) {
+  footer .contenedorFooter {
+    padding: 0 16px; }
+    footer .contenedorFooter .footerInformativo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      justify-content: center;
+      align-content: center;
+      grid-row-gap: 16px;
+      grid-column-gap: 16px;
+      grid-template-areas: "footerContactos footerEnlaces"  "footerSuscripcion footerSuscripcion"  "footerReservados footerReservados"; }
+      footer .contenedorFooter .footerInformativo .footerContactos {
+        grid-area: footerContactos; }
+        footer .contenedorFooter .footerInformativo .footerContactos .titulo {
+          font-weight: bold;
+          width: 100%;
+          text-align: center;
+          color: #fff; }
+        footer .contenedorFooter .footerInformativo .footerContactos .subtitulo {
+          font-size: 12px;
+          text-align: center;
+          color: #fff; }
+        footer .contenedorFooter .footerInformativo .footerContactos .footerRedes {
+          display: flex;
+          justify-content: center; }
+          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+            color: #fff; }
+      footer .contenedorFooter .footerInformativo .footerEnlaces {
+        grid-area: footerEnlaces;
+        display: flex;
+        flex-direction: column; }
+        footer .contenedorFooter .footerInformativo .footerEnlaces .titulo {
+          font-weight: bold;
+          width: 100%;
+          text-align: center;
+          color: #fff; }
+        footer .contenedorFooter .footerInformativo .footerEnlaces .subtitulo {
+          font-size: 12px;
+          text-align: center;
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
+          color: #fff;
+          margin-bottom: 4px; }
+      footer .contenedorFooter .footerInformativo .footerSuscripcion {
+        grid-area: footerSuscripcion;
+        display: none; }
+      footer .contenedorFooter .footerInformativo .footerReservados {
+        grid-area: footerReservados;
+        text-align: center;
+        padding-top: 2px; }
+        footer .contenedorFooter .footerInformativo .footerReservados p {
+          margin-bottom: 0;
+          color: #fff; } }
+
+@media (max-width: 480px) {
+  footer .contenedorFooter {
+    padding: 0 16px; }
+    footer .contenedorFooter .footerInformativo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      justify-content: center;
+      align-content: center;
+      grid-row-gap: 16px;
+      grid-column-gap: 16px;
+      grid-template-areas: "footerContactos footerContactos"  "footerSuscripcion footerSuscripcion"  "footerReservados footerReservados"; }
+      footer .contenedorFooter .footerInformativo .footerContactos {
+        grid-area: footerContactos; }
+        footer .contenedorFooter .footerInformativo .footerContactos .titulo {
+          font-weight: bold;
+          width: 100%;
+          text-align: center;
+          color: #fff; }
+        footer .contenedorFooter .footerInformativo .footerContactos .subtitulo {
+          font-size: 12px;
+          text-align: center;
+          color: #fff; }
+        footer .contenedorFooter .footerInformativo .footerContactos .footerRedes {
+          display: flex;
+          justify-content: center; }
+          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+            color: #fff; }
+      footer .contenedorFooter .footerInformativo .footerEnlaces {
+        grid-area: footerEnlaces;
+        display: none; }
+      footer .contenedorFooter .footerInformativo .footerSuscripcion {
+        grid-area: footerSuscripcion;
+        display: none; }
+      footer .contenedorFooter .footerInformativo .footerReservados {
+        grid-area: footerReservados;
+        text-align: center;
+        padding-top: 2px; }
+        footer .contenedorFooter .footerInformativo .footerReservados p {
+          margin-bottom: 0;
+          color: #fff; } }
 
 .carousel {
   margin-bottom: 16px; }
