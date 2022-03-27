@@ -30,25 +30,31 @@ const obtenerDatos= () =>{
 
 
 const crearProducto =() =>{
-    let sumaProductos = 0;
     let ingresarOtro = true;
     const arrayPerfumes = [];
     while(ingresarOtro){
         let newPerfume = obtenerDatos();
         arrayPerfumes.push(newPerfume);
-        sumaProductos =sumaProductos+newPerfume.precio;
         
         ingresarOtro = confirm("nuevo producto??");
     }
-    if (sumaProductos >=500){
-        alert("ENVIO GRATIS POR HACER UNA COMPRA MAYO A $500");
-    }
     
+    //RECORREMOS PARA MOSTRAR LOS ELEMNTOS
     for(let perfume of arrayPerfumes){
         document.write(perfume.nombre+": $"+perfume.precio+"<br>")
     }
+
+    //OBTENEMOS EL PRECIO TOTAL SUMANDO LOS ELEMENTOS
+    const total = arrayPerfumes.reduce((accumulator, curValue) =>accumulator + curValue.precio, 0)
+
+    //ALERTA DE ENVIO GRATIS
+    if (total >=500){
+        alert("ENVIO GRATIS POR HACER UNA COMPRA MAYO A $500");
+    }
+
+    //MOSTRAMOS EL TOTAL EN EL DOCUMNT
     document.write("------------------------"+"<br>");
-    document.write("TOTAL: $"+sumaProductos+"<br>");
+    document.write("TOTAL: $"+total+"<br>");
     document.write("------------------------"+"<br>");
 }
 
