@@ -2,13 +2,12 @@ class Perfume{
     constructor(marca, nombre, precio){
         this.marca = marca.toUpperCase();
         this.nombre = nombre.toLowerCase();
+        this.categoria = "";
         this.precio = Number(precio);
-    }
-    sumarIva(){
-        return this.precio=this.precio * 1.21;
     }
 }
 
+const arrayPerfumes = [];
 //OBTENER DATOS DE LOS PERFUMES:
 
 const obtenerDatos= () =>{
@@ -31,7 +30,7 @@ const obtenerDatos= () =>{
 
 const crearProducto =() =>{
     let ingresarOtro = true;
-    const arrayPerfumes = [];
+    
     while(ingresarOtro){
         let newPerfume = obtenerDatos();
         arrayPerfumes.push(newPerfume);
@@ -56,6 +55,18 @@ const crearProducto =() =>{
     document.write("------------------------"+"<br>");
     document.write("TOTAL: $"+total+"<br>");
     document.write("------------------------"+"<br>");
+}
+
+const agregarAlCarrito= () =>{
+    
+}
+
+const filtrarPorCategoria = (categSeleccionada) =>{
+    arrayPerfumes.filter(perfu => perfu.categoria===categSeleccionada)
+}
+
+const buscarPorNombre = (valorIngresado) =>{
+    arrayPerfumes.filter(perfu => perfu.nombre===valorIngresado)
 }
 
 crearProducto()

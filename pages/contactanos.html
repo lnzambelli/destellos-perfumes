@@ -41,7 +41,10 @@
               </li>
             </ul>
             <div class="d-flex">
-              <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-cart4"></i></button>
+              <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+                <i class="bi bi-cart4"></i>
+                <span class="badge bg-secondary">0</span>
+              </button>
             </div>
           </div>
         </div>
@@ -63,8 +66,8 @@
 
       <!-- seccion contactos -->
       <h1 class="sección_titulo text-center my-2">Comunicate con Nosotros</h1>
-      <section class="d-flex justify-content-center m-4">
-        <form class="col g-3 container bg-secondary p-4">
+      <section class="d-flex justify-content-center m-4 seccionContacto">
+        <form class="col g-3 container p-4">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombre y Apellido</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
@@ -87,33 +90,11 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-dark">Enviar</button>
+            <button type="button" class="btn">Enviar</button>
           </div>
         </form>
       </section>
-      <!-- seccion otros medios de contacto -->
-      <h2 class="sección_titulo text-center my-2">Encontranos en..</h2>
-      <section class="d-flex justify-content-center m-4">
-        <div class="container bg-secondary p-4 d-flex justify-content-between">
-          <a href="https://www.facebook.com/" target="_blank" type="button" class="btn btn-dark d-flex flex-column">
-             <i class="bi bi-facebook p-2"></i>
-             <span>facebook</span> 
-          </a>
-          <a href="https://www.instagram.com/?hl=es-la" target="_blank" type="button" class="btn btn-dark d-flex flex-column">
-            <i class="bi bi-instagram p-2"></i>
-            <span>instragram</span> 
-          </a>
-          <a href="https://twitter.com/?lang=es" target="_blank" type="button" class="btn btn-dark d-flex flex-column">
-            <i class="bi bi-twitter p-2"></i>
-            <span>twitter</span> 
-          </a>
-          <a href="https://web.whatsapp.com/" target="_blank" type="button" class="btn btn-dark d-flex flex-column"> 
-            <i class="bi bi-whatsapp p-2"></i>
-            <span>whatsapp</span> 
-          </a>
-        </div>  
-      </section>
-            
+           
     </main>
       
    <!-- pie de pagina: footer -->

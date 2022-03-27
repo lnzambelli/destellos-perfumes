@@ -1,5 +1,3 @@
-//box-shadow: 0 0 10px 0 #e0ff00 inset, 0 0 10px 4px #e0ff00;
-
 @mixin estiloTituloFooter{
     font-weight: bold;
     width: 100%;
@@ -12,3 +10,34 @@
     text-align: center;
     color:#fff;
 }
+
+@mixin estiloBordes{
+    box-shadow: 5px 5px 10px 0px #ff968a;
+}
+
+@mixin estiloBordesComun{
+    box-shadow: #ff968a 0px 2px 8px 0px;
+}
+
+@mixin estiloBordesHover{
+    box-shadow: #ff968a 0px 30px 60px -12px inset, #ff968a 0px 18px 36px -18px inset;
+}
+
+@mixin estilosCard{
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #000000, #212121); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #000000, #212121);
+}
+
+@mixin botonHover {
+    box-shadow: 0 0 10px 0 #ff968a inset, 0 0 10px 4px #ff968a;
+    background-color: #FFC0CB;
+}
+
+@mixin botonInicial {
+    background-color: #ff968a;
+    color: #212121;
+    font-weight: bold;
+    border: none;
+}
+

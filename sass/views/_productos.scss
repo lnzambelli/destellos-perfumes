@@ -1,4 +1,63 @@
-.listadoProductos{
-    margin-right: 0px;
-    margin-left: 0px;
+@import "./../utilities/mixins";
+
+
+.contenedorProductos{
+    .listadoProductos{
+        margin-right: 0px;
+        margin-left: 0px;
+        div{
+            .card{
+                @include estiloBordesComun;
+                &:hover{
+                    @include estiloBordesHover;
+                }
+                background-color: #212121;
+                button{
+                    @include botonInicial;
+                    &:hover{
+                        @include botonHover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contenedorBusqueda{
+    background-color: #000000;
+    .cardBuscador{
+        background-color: #000000;
+        form{
+            padding-right: 8px;
+            padding-left: 8px;
+            input:focus {
+                border-color: #ff968a;
+                @include estiloBordesComun;
+            }
+            button{
+                @include botonInicial;
+                &:hover{
+                    @include botonHover;
+                }
+            }
+        }
+    }
+}
+
+.contenedorPerfumes{
+    div{
+        .nav-link{
+            color: #ff968a !important;
+        }
+        .nav-link:active{
+            background-color: #212121;
+        }
+        .nav-link:focus{
+            background-color: #212121;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            color: #fff;
+            background-color: #212121;
+        }
+    }
 }

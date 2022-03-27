@@ -1,0 +1,15 @@
+@import "./../utilities/mixins";
+
+.seccionContacto{
+    form{
+        @include estiloBordes;
+        @include estilosCard;
+        button{
+            @include botonInicial;
+            &:hover{
+                @include botonHover;
+            }
+        }
+    }
+   
+}

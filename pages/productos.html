@@ -41,7 +41,10 @@
               </li>
             </ul>
             <div class="d-flex">
-              <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-cart4"></i></button>
+              <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+                <i class="bi bi-cart4"></i>
+                <span class="badge bg-secondary">0</span>
+              </button>
             </div>
           </div>
         </div>
@@ -62,64 +65,262 @@
       </div>
       <!-- seccion imagen -->
       <section>
-          <img src="./../img/productosPresentacion.jpg" alt="" srcset="">
+          <img src="./../img/productosPresentacion.jpg" alt="" class="w-100">
       </section>
        <!-- seccion titulo -->
-       <h1 class="text-center">Nuestros Productos</h1>
-       <!-- lista de productos titulo -->
-       <section class="container">
-        <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos ">
-          <div class="col">
-            <div class="card h-100">
-              <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Marca</h5>
-                <p class="card-text text-center">fragancia</p>
-                <p class="card-text text-center">precio</p>
-              </div>
-              <button type="button" class="btn btn-secondary w-50 m-auto">Comprar</button>
-            </div>
+       <h1 class="text-center my-4">Nuestros Productos</h1>
+        <!-- seccion busqueda -->
+       <section class="container mb-4 contenedorBusqueda ">
+          <div class="card cardBuscador p-8">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+              <button class="btn" type="submit">Buscar</button>
+            </form>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Marca</h5>
-                <p class="card-text text-center">fragancia</p>
-                <p class="card-text text-center">precio</p>
-              </div>
-              <button type="button" class="btn btn-secondary w-50 m-auto">Comprar</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Marca</h5>
-                <p class="card-text text-center">fragancia</p>
-                <p class="card-text text-center">precio</p>
-              </div>
-              <button type="button" class="btn btn-secondary w-50 m-auto">Comprar</button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">Marca</h5>
-                <p class="card-text text-center">fragancia</p>
-                <p class="card-text text-center">precio</p>
-              </div>
-              <button type="button" class="btn btn-secondary w-50 m-auto">Comprar</button>
-            </div>
-          </div>
-        </div>
        </section>
+      
     </main>
 
-     <!-- listado para desafio -->
-     <section>
-
+     <!-- listado de productos -->
+     <section class="contenedorPerfumes container-fluid">
+      <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <button class="nav-link active" id="v-pills-mujer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mujer" type="button" role="tab" aria-controls="v-pills-mujer" aria-selected="true">MUJER</button>
+          <button class="nav-link" id="v-pills-hombre-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hombre" type="button" role="tab" aria-controls="v-pills-hombre" aria-selected="false">HOMBRE</button>
+          <button class="nav-link" id="v-pills-ninos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ninos" type="button" role="tab" aria-controls="v-pills-ninos" aria-selected="false">NIÑOS</button>
+          <button class="nav-link" id="v-pills-unisex-tab" data-bs-toggle="pill" data-bs-target="#v-pills-unisex" type="button" role="tab" aria-controls="v-pills-unisex" aria-selected="false">UNISEX</button>
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-mujer" role="tabpanel" aria-labelledby="v-pills-mujer-tab">
+            <section class="container contenedorProductos mb-4">
+              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos ">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Mujer</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Mujer</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Mujer</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Mujer</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill ">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+             </section>
+          </div>
+          <div class="tab-pane fade" id="v-pills-hombre" role="tabpanel" aria-labelledby="v-pills-hombre-tab">
+            <section class="container contenedorProductos mb-4">
+              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos ">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Hombre</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Hombre</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Hombre</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Hombre</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill ">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+             </section>
+          </div>
+          <div class="tab-pane fade" id="v-pills-ninos" role="tabpanel" aria-labelledby="v-pills-ninos-tab">
+            <section class="container contenedorProductos mb-4">
+              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos ">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Niños</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Niños</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Niños</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Niños</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill ">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+             </section>
+          </div>
+          <div class="tab-pane fade" id="v-pills-unisex" role="tabpanel" aria-labelledby="v-pills-unisex-tab">
+            <section class="container contenedorProductos mb-4">
+              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos ">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Unisex</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Unisex</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Unisex</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="./../img/foto-perfume.webp" class="card-img-top w-50 m-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Marca Unisex</h5>
+                      <p class="card-text text-center">fragancia</p>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn rounded-pill ">precio <i class="bi bi-cart-plus"></i></button>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+             </section>
+          </div>
+        </div>
+      </div>
      </section>
       
     <!-- pie de pagina: footer -->

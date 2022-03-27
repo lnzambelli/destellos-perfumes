@@ -24,8 +24,10 @@ footer {
       footer .contenedorFooter .footerInformativo .footerContactos .footerRedes {
         display: flex;
         justify-content: center; }
-        footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+        footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a {
           color: #fff; }
+          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+            color: #ca6095; }
     footer .contenedorFooter .footerInformativo .footerEnlaces {
       grid-area: footerEnlaces;
       display: flex;
@@ -92,8 +94,10 @@ footer {
         footer .contenedorFooter .footerInformativo .footerContactos .footerRedes {
           display: flex;
           justify-content: center; }
-          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a {
             color: #fff; }
+            footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+              color: #ca6095; }
       footer .contenedorFooter .footerInformativo .footerEnlaces {
         grid-area: footerEnlaces;
         display: flex;
@@ -148,8 +152,10 @@ footer {
         footer .contenedorFooter .footerInformativo .footerContactos .footerRedes {
           display: flex;
           justify-content: center; }
-          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+          footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a {
             color: #fff; }
+            footer .contenedorFooter .footerInformativo .footerContactos .footerRedes a:hover i {
+              color: #ca6095; }
       footer .contenedorFooter .footerInformativo .footerEnlaces {
         grid-area: footerEnlaces;
         display: none; }
@@ -167,6 +173,74 @@ footer {
 .carousel {
   margin-bottom: 16px; }
 
-.listadoProductos {
+.contenedorInformativo div div {
+  background-color: #212121; }
+
+.contenedorProductos .listadoProductos {
   margin-right: 0px;
   margin-left: 0px; }
+  .contenedorProductos .listadoProductos div .card {
+    box-shadow: #ff968a 0px 2px 8px 0px;
+    background-color: #212121; }
+    .contenedorProductos .listadoProductos div .card:hover {
+      box-shadow: #ff968a 0px 30px 60px -12px inset, #ff968a 0px 18px 36px -18px inset; }
+    .contenedorProductos .listadoProductos div .card button {
+      background-color: #ff968a;
+      color: #212121;
+      font-weight: bold;
+      border: none; }
+      .contenedorProductos .listadoProductos div .card button:hover {
+        box-shadow: 0 0 10px 0 #ff968a inset, 0 0 10px 4px #ff968a;
+        background-color: #FFC0CB; }
+
+.contenedorBusqueda {
+  background-color: #000000; }
+  .contenedorBusqueda .cardBuscador {
+    background-color: #000000; }
+    .contenedorBusqueda .cardBuscador form {
+      padding-right: 8px;
+      padding-left: 8px; }
+      .contenedorBusqueda .cardBuscador form input:focus {
+        border-color: #ff968a;
+        box-shadow: #ff968a 0px 2px 8px 0px; }
+      .contenedorBusqueda .cardBuscador form button {
+        background-color: #ff968a;
+        color: #212121;
+        font-weight: bold;
+        border: none; }
+        .contenedorBusqueda .cardBuscador form button:hover {
+          box-shadow: 0 0 10px 0 #ff968a inset, 0 0 10px 4px #ff968a;
+          background-color: #FFC0CB; }
+
+.contenedorPerfumes div .nav-link {
+  color: #ff968a !important; }
+
+.contenedorPerfumes div .nav-link:active {
+  background-color: #212121; }
+
+.contenedorPerfumes div .nav-link:focus {
+  background-color: #212121; }
+
+.contenedorPerfumes div .nav-pills .nav-link.active, .contenedorPerfumes div .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #212121; }
+
+.seccionContacto form {
+  box-shadow: 5px 5px 10px 0px #ff968a;
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000000, #212121);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, #212121); }
+  .seccionContacto form button {
+    background-color: #ff968a;
+    color: #212121;
+    font-weight: bold;
+    border: none; }
+    .seccionContacto form button:hover {
+      box-shadow: 0 0 10px 0 #ff968a inset, 0 0 10px 4px #ff968a;
+      background-color: #FFC0CB; }
+
+body {
+  background-color: #000000;
+  color: #b9b0af; }
