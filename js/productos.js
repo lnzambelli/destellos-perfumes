@@ -1,64 +1,29 @@
 class Perfume{
-    constructor(marca, nombre, precio){
-        this.marca = marca.toUpperCase();
-        this.nombre = nombre.toLowerCase();
-        this.categoria = "";
+    constructor(nombre, fragancia, precio, categoria){
+        this.nombre = nombre.toUpperCase();
+        this.fragancia = fragancia.toLowerCase();
+        this.categoria = categoria.toUpperCase;
         this.precio = Number(precio);
+        this.cantidad= 0;
     }
 }
 
 const arrayPerfumes = [];
-//OBTENER DATOS DE LOS PERFUMES:
 
-const obtenerDatos= () =>{
-    do{
-        marca = prompt("ingrese marca del perfume");
-        nombre = prompt("ingrese nombre del perfume");
-        precio = Number(prompt("ingrese un precio de compra "));
-        console.log(precio.toString())
-        console.log(precio)
-        if(marca =="" || nombre == "" || precio =="" || precio.toString() == 'NaN'){
-            alert("Error: Existen campos sin completar, vuelva a ingresar los datos");
-        }
-    }while(marca =="" || nombre == "" || precio =="" || precio.toString() =='NaN')
-
-    let nuevoPerfume = new Perfume(marca,nombre,precio);
-
-    return nuevoPerfume
+const cargarArray= () =>{
+    arrayPerfumes.push(new Perfume("Carolina Herrera", "212 men",16900,"Hombre"));
+    arrayPerfumes.push(new Perfume("Loewe", "Agua Ella",13200,"Mujer"));
+    arrayPerfumes.push(new Perfume("Loewe", "Aire",15675,"Mujer"));
+    arrayPerfumes.push(new Perfume("Versace", "Bright Crystal",16320,"Mujer"));
+    arrayPerfumes.push(new Perfume("Kaloo", "Kaloo blue",2450,"Niños"));
+    arrayPerfumes.push(new Perfume("Calvin Klein", "Ck one",16900,"Unisex"));
 }
 
-
-const crearProducto =() =>{
-    let ingresarOtro = true;
-    
-    while(ingresarOtro){
-        let newPerfume = obtenerDatos();
-        arrayPerfumes.push(newPerfume);
-        
-        ingresarOtro = confirm("nuevo producto??");
+//RRECORREMOS EL ARRAY Y MOSTRAMOS EN EL DOCUMENT
+const mostrarArray =(arrayListado) => {
+    for(let perfume of arrayListado){
+        document.write(perfume.nombre+ " "+perfume.fragancia+": $"+perfume.precio+"<br>")
     }
-    
-    //RECORREMOS PARA MOSTRAR LOS ELEMNTOS
-    for(let perfume of arrayPerfumes){
-        document.write(perfume.nombre+": $"+perfume.precio+"<br>")
-    }
-
-    //OBTENEMOS EL PRECIO TOTAL SUMANDO LOS ELEMENTOS
-    const total = arrayPerfumes.reduce((accumulator, curValue) =>accumulator + curValue.precio, 0)
-
-    //ALERTA DE ENVIO GRATIS
-    if (total >=500){
-        alert("ENVIO GRATIS POR HACER UNA COMPRA MAYO A $500");
-    }
-
-    //MOSTRAMOS EL TOTAL EN EL DOCUMNT
-    document.write("------------------------"+"<br>");
-    document.write("TOTAL: $"+total+"<br>");
-    document.write("------------------------"+"<br>");
-}
-
-const agregarAlCarrito= () =>{
-    
 }
 
 const filtrarPorCategoria = (categSeleccionada) =>{
@@ -66,7 +31,46 @@ const filtrarPorCategoria = (categSeleccionada) =>{
 }
 
 const buscarPorNombre = (valorIngresado) =>{
-    arrayPerfumes.filter(perfu => perfu.nombre===valorIngresado)
+     arrayPerfumes.find(perfu => perfu.nombre.includes(valorIngresado))
 }
 
-crearProducto()
+const iniciarBusqueda = (nombreDePerfume) =>{
+    const arrayEncontrados = arrayPerfumes.filter(perf => perf.nombre == nombreDePerfume.toUpperCase());
+    if (arrayEncontrados.length > 0){
+        document.write("LISTADO DE PERFUMES ENCONTRADOS: <br>")
+        mostrarArray(arrayEncontrados)
+    }else{
+        alert("perfume no encontrado!!")
+    }
+    //MOSTRAMOS EN CONSOLA LA SUMA DE TODOS LOS PRECIOS ENCONTRADOS
+    console.log("SUMATORIA: "+arrayEncontrados.reduce((acumulador, valor) =>acumulador + valor.precio, 0))
+}
+
+/*---------------------------------------------------
+CARRITO DE COMPRA
+----------------------------------------------------*/
+
+const arrayCarrito = [];
+
+const agregarAlCarrito= (perfume) =>{
+    //condicion: si existe el producto sumo cant++ sino lo agrego
+    this.arrayCarrito.push(perfume)
+}
+
+const obtenerPrecioTotal = () =>{
+    const total = arrayCarrito.reduce((accumulator, curValue) =>accumulator + curValue.precio, 0)
+}
+
+const eliminarPerfumeDelCarrito = (perfAEliminar) =>{
+    arrayCarrito = arrayCarrito.filter(perfu => perfu.nombre != perfAEliminar)
+}
+
+const confirmarCompra = () =>{
+    alert("Gracias por su compra")
+}
+
+
+//EJECUTAMOS LOS METODOS
+cargarArray();
+const perfumeIngresado = prompt("Ingrese un nombre")
+iniciarBusqueda(perfumeIngresado)

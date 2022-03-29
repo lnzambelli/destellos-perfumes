@@ -8,5 +8,5 @@ class Formulario{
 }
 
 const enviarFormulario= () =>{
-    
+    //mostrar cartel de ENVIADO..
 }
