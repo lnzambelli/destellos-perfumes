@@ -72,5 +72,9 @@ const confirmarCompra = () =>{
 
 //EJECUTAMOS LOS METODOS
 cargarArray();
-const perfumeIngresado = prompt("Ingrese un nombre")
-iniciarBusqueda(perfumeIngresado)
+let perfumeIngresado = prompt("Ingrese un nombre de perfume - ESC para salir").toUpperCase()
+while(perfumeIngresado!= "ESC"){
+    iniciarBusqueda(perfumeIngresado);
+    perfumeIngresado = prompt("Ingrese un nombre de perfume - ESC para salir").toUpperCase();
+}
+
