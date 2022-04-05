@@ -2,8 +2,9 @@ class Perfume{
     constructor(nombre, fragancia, precio, categoria){
         this.nombre = nombre.toUpperCase();
         this.fragancia = fragancia.toLowerCase();
-        this.categoria = categoria.toUpperCase;
+        this.categoria = categoria.toUpperCase();
         this.precio = Number(precio);
+        this.urlImg = "./../img/foto-perfume.webp";
         this.cantidad= 0;
     }
 }
@@ -21,29 +22,49 @@ const cargarArray= () =>{
 
 //RRECORREMOS EL ARRAY Y MOSTRAMOS EN EL DOCUMENT
 const mostrarArray =(arrayListado) => {
+    let contenedorDeProductos = document.getElementById("listadoDeProductos");
+    
     for(let perfume of arrayListado){
-        document.write(perfume.nombre+ " "+perfume.fragancia+": $"+perfume.precio+"<br>")
+        let nuevoPerfume = document.createElement('div');
+        nuevoPerfume.innerHTML = ` <div class="col" >
+        <div class="card h-100" id="eliminado">
+        <img src=${perfume.urlImg} class="card-img-top w-50 m-auto" alt="...">
+        <div class="card-body">
+        <h5 class="card-title text-center">${perfume.nombre}</h5>
+        <p class="card-text text-center">${perfume.fragancia}</p>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn rounded-pill">$${perfume.precio} <i class="bi bi-cart-plus"></i></button>
+        </div>
+        </div>
+        </div> 
+        </div>`;
+        contenedorDeProductos.append(nuevoPerfume)
     }
 }
 
+
 const filtrarPorCategoria = (categSeleccionada) =>{
-    arrayPerfumes.filter(perfu => perfu.categoria===categSeleccionada)
+
 }
 
-const buscarPorNombre = (valorIngresado) =>{
-     arrayPerfumes.find(perfu => perfu.nombre.includes(valorIngresado))
-}
-
-const iniciarBusqueda = (nombreDePerfume) =>{
+const buscarPorNombre = (nombreDePerfume) =>{
     const arrayEncontrados = arrayPerfumes.filter(perf => perf.nombre == nombreDePerfume.toUpperCase());
     if (arrayEncontrados.length > 0){
-        document.write("LISTADO DE PERFUMES ENCONTRADOS: <br>")
-        mostrarArray(arrayEncontrados)
+        let resultado = document.getElementById("resultadoFiltro");
+        for(let aux of arrayEncontrados){
+            let encontrados = document.createElement('li');
+            encontrados.innerHTML = `<li>${aux.nombre} - ${aux.fragancia} - $ ${aux.precio} </li>`;
+            resultado.append(encontrados);
+        }
+        //MOSTRAMOS LA SUMA DE TODOS LOS PRECIOS ENCONTRADOS
+        const suma = arrayEncontrados.reduce((acumulador, valor) =>acumulador + valor.precio, 0);
+        let sumatoria = document.getElementById("sumaBusqueda");
+        sumatoria.innerText = `TOTAL: $ ${suma}`;
+
     }else{
         alert("perfume no encontrado!!")
     }
-    //MOSTRAMOS EN CONSOLA LA SUMA DE TODOS LOS PRECIOS ENCONTRADOS
-    console.log("SUMATORIA: "+arrayEncontrados.reduce((acumulador, valor) =>acumulador + valor.precio, 0))
+
 }
 
 /*---------------------------------------------------
@@ -72,9 +93,11 @@ const confirmarCompra = () =>{
 
 //EJECUTAMOS LOS METODOS
 cargarArray();
-let perfumeIngresado = prompt("Ingrese un nombre de perfume - ESC para salir").toUpperCase()
-while(perfumeIngresado!= "ESC"){
-    iniciarBusqueda(perfumeIngresado);
-    perfumeIngresado = prompt("Ingrese un nombre de perfume - ESC para salir").toUpperCase();
-}
 
+mostrarArray(arrayPerfumes)
+
+let botonBusquedaPorNombre = document.getElementById("btnBuscador");
+botonBusquedaPorNombre.onclick = ()=>{ 
+    let perfumeIngresado = document.getElementById("inputBuscador");
+    buscarPorNombre(perfumeIngresado.value) 
+}

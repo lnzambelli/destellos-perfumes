@@ -7,6 +7,24 @@ class Formulario{
     }
 }
 
-const enviarFormulario= () =>{
-    //mostrar cartel de ENVIADO..
+
+let fomulario = document.getElementById("form");
+
+fomulario.addEventListener('submit',enviarDatos );
+
+function enviarDatos(e){
+    e.preventDefault();
+    //obtener el dato
+    let dato = e.target;
+    
+    const miForm = new Formulario(dato.children[0].children[1].value, dato.children[1].children[1].value, dato.children[2].children[1].value,dato.children[3].children[1].value);
+    //obtengo los datos de cada uno de los hijos
+    
+    alert(`${miForm.nombre} tu mensaje se envio correctamente! Gracias por contactarte`)
+    
+    //reseteamos el formulario
+    dato.children[0].children[1].value ="";
+    dato.children[1].children[1].value ="";
+    dato.children[2].children[1].value ="";
+    dato.children[3].children[1].value ="";
 }
