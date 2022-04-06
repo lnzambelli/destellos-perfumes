@@ -8,9 +8,9 @@ class Formulario{
 }
 
 
-let fomulario = document.getElementById("form");
+let dataFomulario = document.getElementById("form");
 
-fomulario.addEventListener('submit',enviarDatos );
+dataFomulario.addEventListener('submit',enviarDatos );
 
 function enviarDatos(e){
     e.preventDefault();
