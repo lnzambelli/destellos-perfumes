@@ -1,4 +1,3 @@
-
 class Perfume{
     constructor(nombre, fragancia, precio, categoria){
         this.nombre = nombre.toUpperCase();
@@ -49,7 +48,7 @@ const mostrarArray =(arrayListado) => {
             <form class="card h-100 formCard">
             <img src=${perfume.urlImg} class="card-img-top w-50 m-auto" alt="...">
             <div class="card-body">
-            <h5 class="card-title text-center">${perfume.nombre}</h5>
+            <p class="card-title text-center">${perfume.nombre}</p>
             <p class="card-text text-center">${perfume.fragancia}</p>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn rounded-pill btnAgregar">$${perfume.precio} <i class="bi bi-cart-plus"></i></button>
@@ -74,7 +73,7 @@ const filtrarPorCategoria = (categSeleccionada, idListado) =>{
             <form class="card h-100 formCard">
             <img src=${perfume.urlImg} class="card-img-top w-50 m-auto" alt="...">
             <div class="card-body">
-            <h5 class="card-title text-center">${perfume.nombre}</h5>
+            <p class="card-title text-center">${perfume.nombre}</p>
             <p class="card-text text-center">${perfume.fragancia}</p>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn rounded-pill btnAgregar">$${perfume.precio} <i class="bi bi-cart-plus"></i></button>
@@ -180,31 +179,40 @@ let botonCategoriaMujer = document.getElementById("v-pills-mujer-tab");
 botonCategoriaMujer.onclick = ()=>{ 
     let idListado = 'listadoDeProductosMujer';
     filtrarPorCategoria(botonCategoriaMujer.innerText, idListado) ;
+    obtenerBotonesYEscuchar();
 }
 
 let botonCategoriaHombre = document.getElementById("v-pills-hombre-tab");
 botonCategoriaHombre.onclick = ()=>{ 
     let idListado = 'listadoDeProductosHombre';
     filtrarPorCategoria(botonCategoriaHombre.innerText, idListado) ;
+    obtenerBotonesYEscuchar();
 }
 
 let botonCategoriaNinos = document.getElementById("v-pills-ninos-tab");
 botonCategoriaNinos.onclick = ()=>{ 
     let idListado = 'listadoDeProductosNinos';
     filtrarPorCategoria(botonCategoriaNinos.innerText, idListado) ;
+    obtenerBotonesYEscuchar();
 }
 
 let botonCategoriaUnisex = document.getElementById("v-pills-unisex-tab");
 botonCategoriaUnisex.onclick = ()=>{ 
     let idListado = 'listadoDeProductosUnisex';
     filtrarPorCategoria(botonCategoriaUnisex.innerText, idListado) ;
+    obtenerBotonesYEscuchar();
 }
 
-let dataPerfume = document.getElementsByClassName("formCard");
+function obtenerBotonesYEscuchar(){
+    let dataPerfume = document.getElementsByClassName("formCard");
 
-for(let perfume of dataPerfume){
-    perfume.addEventListener('submit',enviarDatos); 
+    for(let perfume of dataPerfume){
+        perfume.addEventListener('submit',enviarDatos); 
+    }
 }
+
+
+obtenerBotonesYEscuchar();
 
 function enviarDatos(e){
     e.preventDefault();

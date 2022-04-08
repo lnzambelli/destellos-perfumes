@@ -72,8 +72,9 @@
       </section>
        <!-- seccion titulo -->
        <h1 class="text-center my-4">Nuestros Productos</h1>
-        <!-- seccion busqueda -->
-       <section class="container mb-4 contenedorBusqueda ">
+        
+       <!-- seccion busqueda -->
+       <section class="container mb-4 contenedorBusqueda d-sm-none d-md-none ">
           <div class="card cardBuscador p-8">
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Ingrese el nombre de un perfume" aria-label="Buscar" id="inputBuscador">
@@ -86,8 +87,8 @@
 
      <!-- listado de productos -->
      <section class="contenedorPerfumes container-fluid">
-      <div class="d-flex align-items-start">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <div class="d-flex align-items-center flex-column flex-sm-row align-items-sm-start">
+        <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <button class="nav-link active " id="v-pills-todos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-todos" type="button" role="tab" aria-controls="v-pills-todos" aria-selected="true">TODOS</button>
           <button class="nav-link " id="v-pills-mujer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mujer" type="button" role="tab" aria-controls="v-pills-mujer" aria-selected="false" >MUJER</button>
           <button class="nav-link " id="v-pills-hombre-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hombre" type="button" role="tab" aria-controls="v-pills-hombre" aria-selected="false">HOMBRE</button>
@@ -95,47 +96,47 @@
           <button class="nav-link " id="v-pills-unisex-tab" data-bs-toggle="pill" data-bs-target="#v-pills-unisex" type="button" role="tab" aria-controls="v-pills-unisex" aria-selected="false" >UNISEX</button>
         </div>
         
-        <!-- ELEMETOS FILTRO-->
+        <!-- ELEMETOS FILTRO -->
         <div>
           <ul id="resultadoFiltro">
             
           </ul>
           <span id="sumaBusqueda"></span>
         </div>
-        
+       
 
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-todos" role="tabpanel" aria-labelledby="v-pills-todos-tab">
             <section class="container contenedorProductos mb-4">
-              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos" id="listadoDeProductos">
+              <div class="row row-cols-2  row-cols-md-3 g-4 row-cols-lg-4 row-cols-sm-2 row-cols-xl-5 row-cols-xxl-6 listadoProductos" id="listadoDeProductos">
                   <!-- LISTADO DE TODOS LOS PRODUCTOS RENDERIZADO DESDE JS-->
               </div>
              </section>
           </div>
           <div class="tab-pane fade show " id="v-pills-mujer" role="tabpanel" aria-labelledby="v-pills-mujer-tab">
             <section class="container contenedorProductos mb-4">
-              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos" id="listadoDeProductosMujer" >
+              <div class="row row-cols-2 row-cols-md-4 g-4 row-cols-sm-2 listadoProductos" id="listadoDeProductosMujer" >
                    <!-- LISTADO DE TODOS LOS PRODUCTOS MUJER DESDE JS-->
               </div>
              </section>
           </div>
           <div class="tab-pane fade" id="v-pills-hombre" role="tabpanel" aria-labelledby="v-pills-hombre-tab">
             <section class="container contenedorProductos mb-4">
-              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos" id="listadoDeProductosHombre">
+              <div class="row row-cols-2 row-cols-md-4 g-4 row-cols-sm-2 listadoProductos" id="listadoDeProductosHombre">
                    <!-- LISTADO DE TODOS LOS PRODUCTOS HOMBRE DESDE JS-->
               </div>
              </section>
           </div>
           <div class="tab-pane fade" id="v-pills-ninos" role="tabpanel" aria-labelledby="v-pills-ninos-tab">
             <section class="container contenedorProductos mb-4">
-              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos" id="listadoDeProductosNinos">
+              <div class="row row-cols-2 row-cols-md-4 g-4 row-cols-sm-2 listadoProductos" id="listadoDeProductosNinos">
                    <!-- LISTADO DE TODOS LOS PRODUCTOS NIÑOS DESDE JS-->
               </div>
              </section>
           </div>
           <div class="tab-pane fade" id="v-pills-unisex" role="tabpanel" aria-labelledby="v-pills-unisex-tab">
             <section class="container contenedorProductos mb-4">
-              <div class="row row-cols-1 row-cols-md-4 g-4 listadoProductos" id="listadoDeProductosUnisex">
+              <div class="row row-cols-2 row-cols-md-4 g-4 row-cols-sm-2 listadoProductos" id="listadoDeProductosUnisex">
                    <!-- LISTADO DE TODOS LOS PRODUCTOS UNISEX DESDE JS-->
               </div>
              </section>

@@ -7,6 +7,7 @@
         margin-left: 0px;
         div{
             .card{
+               
                 @include estiloBordesComun;
                 &:hover{
                     @include estiloBordesHover;
