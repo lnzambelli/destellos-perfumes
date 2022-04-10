@@ -1,4 +1,6 @@
-
+/*---------------------------------------------------
+CLASES
+----------------------------------------------------*/
 class Perfume{
     constructor(nombre, fragancia, precio, categoria){
         this.nombre = nombre.toUpperCase();
@@ -18,6 +20,10 @@ class Carrito{
         this.total = Number(this.precio)*this.cantidad;
     }
 }
+
+/*---------------------------------------------------
+CARGA DE PRODUCTOS 
+----------------------------------------------------*/
 
 const arrayPerfumes = [];
 
@@ -39,7 +45,9 @@ const cargarArray= () =>{
     arrayPerfumes.push(new Perfume("Calvin", "Ck one bb",13600,"Unisex"));
 }
 
-//RRECORREMOS EL ARRAY Y MOSTRAMOS EN EL DOCUMENT
+/*---------------------------------------------------
+RECORREMOS EL ARRAY Y MOSTRAMOS EN EL DOCUMENT
+----------------------------------------------------*/
 const mostrarArray =(arrayListado) => {
     let contenedorDeProductos = document.getElementById("listadoDeProductos");
 
@@ -61,6 +69,9 @@ const mostrarArray =(arrayListado) => {
     }
 }
 
+/*---------------------------------------------------
+FILTROS
+----------------------------------------------------*/
 
 const filtrarPorCategoria = (categSeleccionada, idListado) =>{
    
@@ -106,9 +117,10 @@ const buscarPorNombre = (nombreDePerfume) =>{
 
 }
 
+/*---------------------------------------------------
+MENSAJE DE CONFIRMACION DE PROD AGREGADO AL CARRITO (CLICK)
+----------------------------------------------------*/
 
-
-//MOSTRAR MENSAJE AL HACER CLICK
 var toastTrigger = document.getElementById('liveToastBtn')
 var toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {
@@ -120,26 +132,30 @@ if (toastTrigger) {
 }
 let toastMensaje = document.getElementById('liveToast')
 let toast = new bootstrap.Toast(toastLiveExample)
+
 /*---------------------------------------------------
-CARRITO DE COMPRA
+GUARDO EN LOCAL STORAGE
 ----------------------------------------------------*/
 
 let arrayCarrito = [];
 
 const agregarAlCarrito= (perfume) =>{
-    //condicion: si existe el producto sumo cant++ sino lo agrego
     let nuevo = new Carrito(perfume[0], perfume[1], perfume[2])
-    if (arrayCarrito.length==0){
+    if (localStorage.getItem('arrCarrito')==null){
         arrayCarrito.push(nuevo);
-        toast.show()
+        localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
+        toast.show();
     }else{
+        arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
         arrayEncontrado = arrayCarrito.filter(dato => dato.nombre==nuevo.nombre);
-        
         if(arrayEncontrado.length==0){
+            arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
             arrayCarrito.push(nuevo)
+            localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
             toast.show()
         }
         else{
+            arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
             arrayCarrito.forEach(dato =>{
                 if(dato.nombre==nuevo.nombre){
                     dato.cantidad++;
@@ -147,38 +163,11 @@ const agregarAlCarrito= (perfume) =>{
                     toast.show()
                 }
             })
+            localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
         }
-        
     }
+    location.reload()
     mostrarCarrito(arrayCarrito)
-    console.log(arrayCarrito)
-}
-
-const mostrarCarrito = (arrayCarrito) =>{
-    let contenedorCarrito = document.getElementById('listaCarrito');
-    contenedorCarrito.innerHTML = '';
-    for(let cart of arrayCarrito){
-        let nuevalista = document.createElement('li');
-        nuevalista.innerHTML = ` <li class="list-group-item">${cart.cantidad} ${cart.nombre} ${cart.fragancia} $${cart.total}</li>`;
-        contenedorCarrito.appendChild(nuevalista);
-    }
-    let total = obtenerPrecioTotal(arrayCarrito)
-    let nuevalista = document.createElement('li');
-    nuevalista.innerHTML = ` <li class="list-group-item list-group-item-danger">TOTAL: $${total}</li>`;
-    contenedorCarrito.appendChild(nuevalista);
-    
-}
-
-const obtenerPrecioTotal = (curValue) =>{
-    return arrayCarrito.reduce((accumulator, curValue) =>accumulator + curValue.total, 0)
-}
-
-const eliminarPerfumeDelCarrito = (perfAEliminar) =>{
-    arrayCarrito = arrayCarrito.filter(perfu => perfu.nombre != perfAEliminar)
-}
-
-const confirmarCompra = () =>{
-    alert("Gracias por su compra")
 }
 
 
@@ -186,6 +175,10 @@ const confirmarCompra = () =>{
 cargarArray();
 
 mostrarArray(arrayPerfumes)
+
+/*---------------------------------------------------
+OBTENEMOS BOTONES PARA FILTRAR POR CATEGORIA
+----------------------------------------------------*/
 
 let botonBusquedaPorNombre = document.getElementById("btnBuscador");
 botonBusquedaPorNombre.onclick = ()=>{ 
@@ -232,6 +225,10 @@ function obtenerBotonesYEscuchar(){
 
 obtenerBotonesYEscuchar();
 
+/*---------------------------------------------------
+FUNCION PARA OBTENER INFORMACION DEL PROD
+----------------------------------------------------*/
+
 function enviarDatos(e){
     e.preventDefault();
     //obtener el dato
@@ -243,6 +240,3 @@ function enviarDatos(e){
 
    agregarAlCarrito(newCartPerfume);
 }
-
-
-
