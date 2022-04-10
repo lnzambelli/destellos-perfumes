@@ -1,3 +1,4 @@
+
 class Perfume{
     constructor(nombre, fragancia, precio, categoria){
         this.nombre = nombre.toUpperCase();
@@ -105,6 +106,20 @@ const buscarPorNombre = (nombreDePerfume) =>{
 
 }
 
+
+
+//MOSTRAR MENSAJE AL HACER CLICK
+var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', function () {
+    var toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
+let toastMensaje = document.getElementById('liveToast')
+let toast = new bootstrap.Toast(toastLiveExample)
 /*---------------------------------------------------
 CARRITO DE COMPRA
 ----------------------------------------------------*/
@@ -115,18 +130,21 @@ const agregarAlCarrito= (perfume) =>{
     //condicion: si existe el producto sumo cant++ sino lo agrego
     let nuevo = new Carrito(perfume[0], perfume[1], perfume[2])
     if (arrayCarrito.length==0){
-        arrayCarrito.push(nuevo)
+        arrayCarrito.push(nuevo);
+        toast.show()
     }else{
         arrayEncontrado = arrayCarrito.filter(dato => dato.nombre==nuevo.nombre);
         
         if(arrayEncontrado.length==0){
             arrayCarrito.push(nuevo)
+            toast.show()
         }
         else{
             arrayCarrito.forEach(dato =>{
                 if(dato.nombre==nuevo.nombre){
                     dato.cantidad++;
-                    dato.total = dato.cantidad * dato.precio
+                    dato.total = dato.cantidad * dato.precio;
+                    toast.show()
                 }
             })
         }
