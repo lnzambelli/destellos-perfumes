@@ -33,3 +33,9 @@ const obtenerCantidadProductos =() =>{
 const obtenerPrecioTotal = (curValue) =>{
     return miCarrito.reduce((accumulator, curValue) =>accumulator + curValue.total, 0)
 }
+
+let botonVaciarCarrito = document.getElementById('btnVaciarCarrito');
+botonVaciarCarrito.onclick = ()=>{ 
+    localStorage.removeItem('arrCarrito')
+    location.reload()
+}

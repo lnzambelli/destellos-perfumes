@@ -136,7 +136,6 @@ let toast = new bootstrap.Toast(toastLiveExample)
 /*---------------------------------------------------
 GUARDO EN LOCAL STORAGE
 ----------------------------------------------------*/
-
 let arrayCarrito = [];
 
 const agregarAlCarrito= (perfume) =>{
@@ -179,7 +178,6 @@ mostrarArray(arrayPerfumes)
 /*---------------------------------------------------
 OBTENEMOS BOTONES PARA FILTRAR POR CATEGORIA
 ----------------------------------------------------*/
-
 let botonBusquedaPorNombre = document.getElementById("btnBuscador");
 botonBusquedaPorNombre.onclick = ()=>{ 
     let perfumeIngresado = document.getElementById("inputBuscador");
@@ -222,13 +220,11 @@ function obtenerBotonesYEscuchar(){
     }
 }
 
-
 obtenerBotonesYEscuchar();
 
 /*---------------------------------------------------
 FUNCION PARA OBTENER INFORMACION DEL PROD
 ----------------------------------------------------*/
-
 function enviarDatos(e){
     e.preventDefault();
     //obtener el dato
