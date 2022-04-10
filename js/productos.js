@@ -126,7 +126,6 @@ var toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {
   toastTrigger.addEventListener('click', function () {
     var toast = new bootstrap.Toast(toastLiveExample)
-
     toast.show()
   })
 }
@@ -165,7 +164,9 @@ const agregarAlCarrito= (perfume) =>{
             localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
         }
     }
-    location.reload()
+    setTimeout(() => {
+        location.reload()
+    }, 1000);
     mostrarCarrito(arrayCarrito)
 }
 
