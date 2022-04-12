@@ -1,5 +1,4 @@
-{
-    "perfumes": [
+[
         {
             "nombre": "Carolina Herrera",
             "fragancia": "212 men",
@@ -112,5 +111,4 @@
             "categoria": "Niños",
             "urlImg":"./../img/productos/Burberry.webp"
         }
-    ]
-}
+]
