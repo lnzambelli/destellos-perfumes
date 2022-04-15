@@ -7,7 +7,6 @@
         margin-left: 0px;
         div{
             .card{
-               
                 @include estiloBordesComun;
                 &:hover{
                     @include estiloBordesHover;
@@ -18,6 +17,11 @@
                     &:hover{
                         @include botonHover;
                     }
+                }
+                .card-img-top{
+                    
+                    border-radius: 50px;
+                    @include estiloBordeImagenes
                 }
             }
         }
@@ -62,3 +66,4 @@
         }
     }
 }
+
