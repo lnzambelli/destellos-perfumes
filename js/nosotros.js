@@ -8,11 +8,12 @@ const mostrarVendedores = (listadoVendedores) =>{
     let itemsTablaVendedores = document.getElementById('listadoVendedores');
     itemsTablaVendedores.innerHTML='';
     for(let vendedor of listadoVendedores){
+        let {name, email, address: {city}, phone} = vendedor
         let nuevaFila = document.createElement('tr');
-        nuevaFila.innerHTML= `  <td>${vendedor.name}</td>
-                                <td>${vendedor.address.city}</td>
-                                <td>${vendedor.email}</td>
-                                <td>${vendedor.phone}</td> `
+        nuevaFila.innerHTML= `  <td>${name}</td>
+                                <td>${city}</td>
+                                <td>${email}</td>
+                                <td>${phone}</td> `
         itemsTablaVendedores.append(nuevaFila)
     }  
 }

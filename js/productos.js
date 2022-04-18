@@ -1,7 +1,7 @@
 /*---------------------------------------------------
 OBTENGO LOS DATOS DEL JSON DE PERFUMES
 ----------------------------------------------------*/
-const listaPerfumesJSON = dataPerfumes;
+const listaPerfumesJSON = dataPerfumes || [] ;
 
 /*---------------------------------------------------
 CLASES
@@ -36,7 +36,6 @@ const cargarArray= () =>{
     for(let p of listaPerfumesJSON){
         arrayPerfumes.push(new Perfume(p.nombre,p.fragancia,p.precio,p.categoria,p.urlImg));
     }
-    
 }
 
 /*---------------------------------------------------

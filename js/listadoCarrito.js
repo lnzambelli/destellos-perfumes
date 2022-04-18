@@ -1,9 +1,10 @@
-let miCarrito = JSON.parse(localStorage.getItem('arrCarrito'));
+let miCarrito = JSON.parse(localStorage.getItem('arrCarrito')) || [] ;
 
 let botonAbrirCarrito = document.getElementById('btnAbrirCarrito');
-botonAbrirCarrito.onclick = ()=>{ 
-    mostrarCarrito(miCarrito);
-    obtenerCantidadProductos();
+botonAbrirCarrito.onclick = ()=>{
+    miCarrito.length!==0 ? mostrarCarrito(miCarrito) : mostrarMsjVacio(); 
+    //mostrarCarrito(miCarrito);
+    //obtenerCantidadProductos();
 }
 
 window.addEventListener('load', function() {
@@ -11,7 +12,17 @@ window.addEventListener('load', function() {
     obtenerCantidadProductos()
 });
 
+const mostrarMsjVacio = () =>{
+    botonVaciarCarrito.style.display = "none"
+    let contenedorCarrito = document.getElementById('listaCarrito');
+    contenedorCarrito.innerHTML = '';
+    let nuevalista = document.createElement('li');
+    nuevalista.innerHTML = ` <li class="list-group-item list-group-item-danger">No hay productos agregados</li>`;
+    contenedorCarrito.appendChild(nuevalista);
+}
+
 const mostrarCarrito = (miCarrito) =>{
+    botonVaciarCarrito.style.display = "hidden"
     let contenedorCarrito = document.getElementById('listaCarrito');
     contenedorCarrito.innerHTML = '';
     for(let cart of miCarrito){
@@ -23,6 +34,7 @@ const mostrarCarrito = (miCarrito) =>{
     let nuevalista = document.createElement('li');
     nuevalista.innerHTML = ` <li class="list-group-item list-group-item-danger">TOTAL: $${total}</li>`;
     contenedorCarrito.appendChild(nuevalista);
+    obtenerCantidadProductos();
 }
 
 const obtenerCantidadProductos =() =>{
