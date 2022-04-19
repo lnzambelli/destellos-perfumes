@@ -4,29 +4,6 @@ OBTENGO LOS DATOS DEL JSON DE PERFUMES
 const listaPerfumesJSON = dataPerfumes || [] ;
 
 /*---------------------------------------------------
-CLASES
-----------------------------------------------------*/
-class Perfume{
-    constructor(nombre, fragancia, precio, categoria,urlImg){
-        this.nombre = nombre.toUpperCase();
-        this.fragancia = fragancia.toLowerCase();
-        this.categoria = categoria.toUpperCase();
-        this.precio = Number(precio);
-        this.urlImg = urlImg;
-    }
-}
-
-class Carrito{
-    constructor(nombre, fragancia, precio){
-        this.nombre = nombre.toUpperCase();
-        this.fragancia = fragancia.toLowerCase();
-        this.precio = precio.replace('$','');
-        this.cantidad = 1;
-        this.total = Number(this.precio)*this.cantidad;
-    }
-}
-
-/*---------------------------------------------------
 CARGA DE PRODUCTOS 
 ----------------------------------------------------*/
 

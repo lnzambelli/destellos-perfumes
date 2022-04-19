@@ -1,13 +1,14 @@
 //obtengo vendedores de assets
-const misVendedores = dataVendedores;
+const misVendedores = dataVendedores || [] ;
 
 //funcion para mostrar en dom
 const mostrarVendedores = (listadoVendedores) =>{
+    
     //obtengo el body para agregar filas a la tabla
-
     let itemsTablaVendedores = document.getElementById('listadoVendedores');
     itemsTablaVendedores.innerHTML='';
     for(let vendedor of listadoVendedores){
+        //desestructuramos los vendedores
         let {name, email, address: {city}, phone} = vendedor
         let nuevaFila = document.createElement('tr');
         nuevaFila.innerHTML= `  <td>${name}</td>

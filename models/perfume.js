@@ -1,4 +1,4 @@
-export class Perfume{
+class Perfume{
     constructor(nombre, fragancia, precio, categoria,urlImg){
         this.nombre = nombre.toUpperCase();
         this.fragancia = fragancia.toLowerCase();

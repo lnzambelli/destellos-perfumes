@@ -1,4 +1,4 @@
-export class Carrito{
+class Carrito{
     constructor(nombre, fragancia, precio){
         this.nombre = nombre.toUpperCase();
         this.fragancia = fragancia.toLowerCase();
