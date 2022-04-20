@@ -3,8 +3,6 @@ let miCarrito = JSON.parse(localStorage.getItem('arrCarrito')) || [] ;
 let botonAbrirCarrito = document.getElementById('btnAbrirCarrito');
 botonAbrirCarrito.onclick = ()=>{
     miCarrito.length!==0 ? mostrarCarrito(miCarrito) : mostrarMsjVacio(); 
-    //mostrarCarrito(miCarrito);
-    //obtenerCantidadProductos();
 }
 
 window.addEventListener('load', function() {
@@ -28,8 +26,9 @@ const mostrarCarrito = (miCarrito) =>{
     let contenedorCarrito = document.getElementById('listaCarrito');
     contenedorCarrito.innerHTML = '';
     for(let cart of miCarrito){
+        let {cantidad, nombre, fragancia, total} = cart
         let nuevalista = document.createElement('li');
-        nuevalista.innerHTML = ` <li class="list-group-item">${cart.cantidad} ${cart.nombre} ${cart.fragancia} $${cart.total}</li>`;
+        nuevalista.innerHTML = ` <li class="list-group-item">${cantidad} ${nombre} ${fragancia} $${total}</li>`;
         contenedorCarrito.appendChild(nuevalista);
     }
     let total = obtenerPrecioTotal(miCarrito)
