@@ -6,7 +6,6 @@ const listaPerfumesJSON = dataPerfumes || [] ;
 /*---------------------------------------------------
 CARGA DE PRODUCTOS 
 ----------------------------------------------------*/
-
 const arrayPerfumes = [];
 
 const cargarArray= () =>{
@@ -42,7 +41,6 @@ const mostrarArray =(arrayListado) => {
 /*---------------------------------------------------
 FILTROS
 ----------------------------------------------------*/
-
 const filtrarPorCategoria = (categSeleccionada, idListado) =>{
    
     let contenedorDeProductos = document.getElementById(idListado);
@@ -89,7 +87,6 @@ const buscarPorNombre = (nombreDePerfume) =>{
 /*---------------------------------------------------
 MENSAJE DE CONFIRMACION DE PROD AGREGADO AL CARRITO (CLICK)
 ----------------------------------------------------*/
-
 var toastTrigger = document.getElementById('liveToastBtn')
 var toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {

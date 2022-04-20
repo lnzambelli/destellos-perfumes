@@ -13,7 +13,8 @@ window.addEventListener('load', function() {
 });
 
 const mostrarMsjVacio = () =>{
-    botonVaciarCarrito.style.display = "none"
+    botonVaciarCarrito.style.display = "none";
+    botonConfirmarCarrito.style.display = "none"
     let contenedorCarrito = document.getElementById('listaCarrito');
     contenedorCarrito.innerHTML = '';
     let nuevalista = document.createElement('li');
@@ -23,6 +24,7 @@ const mostrarMsjVacio = () =>{
 
 const mostrarCarrito = (miCarrito) =>{
     botonVaciarCarrito.style.display = "hidden"
+    botonConfirmarCarrito.style.display = "hidden"
     let contenedorCarrito = document.getElementById('listaCarrito');
     contenedorCarrito.innerHTML = '';
     for(let cart of miCarrito){
@@ -48,6 +50,52 @@ const obtenerPrecioTotal = (curValue) =>{
 
 let botonVaciarCarrito = document.getElementById('btnVaciarCarrito');
 botonVaciarCarrito.onclick = ()=>{ 
-    localStorage.removeItem('arrCarrito')
-    location.reload()
+    
+    Swal.fire({
+        title: 'Esta seguro?',
+        text: "No se podra recuperar los productos",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, vaciar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Vaciado!',
+            'Los productos fueron eliminados',
+            'success'
+          )
+          localStorage.removeItem('arrCarrito');
+          setTimeout(() => {
+            location.reload()
+        }, 3000);
+        }
+      }) 
+}
+
+let botonConfirmarCarrito =document.getElementById('btnConfirmarCarrito');
+botonConfirmarCarrito.onclick = ()=>{ 
+    Swal.fire({
+        title: 'Confirmar Compra?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, comprar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            `Gracias!!`,
+            'Su compra fue realizada con éxito',
+            'success'
+          )
+          localStorage.removeItem('arrCarrito');
+          setTimeout(() => {
+            location.reload()
+        }, 3000);
+        }
+      }) 
+  
 }
