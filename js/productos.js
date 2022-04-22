@@ -84,19 +84,6 @@ const buscarPorNombre = (nombreDePerfume) =>{
     }
 }
 
-/*---------------------------------------------------
-MENSAJE DE CONFIRMACION DE PROD AGREGADO AL CARRITO (CLICK)
-----------------------------------------------------*/
-var toastTrigger = document.getElementById('liveToastBtn')
-var toastLiveExample = document.getElementById('liveToast')
-if (toastTrigger) {
-  toastTrigger.addEventListener('click', function () {
-    var toast = new bootstrap.Toast(toastLiveExample)
-    toast.show()
-  })
-}
-let toastMensaje = document.getElementById('liveToast')
-let toast = new bootstrap.Toast(toastLiveExample)
 
 /*---------------------------------------------------
 GUARDO EN LOCAL STORAGE
@@ -108,7 +95,7 @@ const agregarAlCarrito= (perfume) =>{
     if (localStorage.getItem('arrCarrito')==null){
         arrayCarrito.push(nuevo);
         localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
-        toast.show();
+        Swal.fire('Agregado al carrito!')
     }else{
         arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
         arrayEncontrado = arrayCarrito.filter(dato => dato.nombre==nuevo.nombre);
@@ -116,7 +103,7 @@ const agregarAlCarrito= (perfume) =>{
             arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
             arrayCarrito.push(nuevo)
             localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
-            toast.show()
+            Swal.fire('Agregado al carrito!')
         }
         else{
             arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
@@ -124,7 +111,7 @@ const agregarAlCarrito= (perfume) =>{
                 if(dato.nombre==nuevo.nombre){
                     dato.cantidad++;
                     dato.total = dato.cantidad * dato.precio;
-                    toast.show()
+                    Swal.fire('Agregado al carrito!')
                 }
             })
             localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
@@ -136,10 +123,8 @@ const agregarAlCarrito= (perfume) =>{
     mostrarCarrito(arrayCarrito)
 }
 
-
 //EJECUTAMOS LOS METODOS
 cargarArray();
-
 mostrarArray(arrayPerfumes)
 
 /*---------------------------------------------------
