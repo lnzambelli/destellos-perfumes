@@ -1,5 +1,5 @@
 /*---------------------------------------------------
-OBTENGO LOS DATOS DEL JSON DE PERFUMES
+OBTENGO LOS DATOS DEL JS EXTERNO DE PERFUMES
 ----------------------------------------------------*/
 const listaPerfumesJSON = dataPerfumes || [] ;
 
@@ -84,7 +84,6 @@ const buscarPorNombre = (nombreDePerfume) =>{
     }
 }
 
-
 /*---------------------------------------------------
 GUARDO EN LOCAL STORAGE
 ----------------------------------------------------*/
@@ -95,7 +94,6 @@ const agregarAlCarrito= (perfume) =>{
     if (localStorage.getItem('arrCarrito')==null){
         arrayCarrito.push(nuevo);
         localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
-        Swal.fire('Agregado al carrito!')
     }else{
         arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
         arrayEncontrado = arrayCarrito.filter(dato => dato.nombre==nuevo.nombre);
@@ -103,7 +101,6 @@ const agregarAlCarrito= (perfume) =>{
             arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
             arrayCarrito.push(nuevo)
             localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
-            Swal.fire('Agregado al carrito!')
         }
         else{
             arrayCarrito = JSON.parse(localStorage.getItem('arrCarrito'))
@@ -111,15 +108,12 @@ const agregarAlCarrito= (perfume) =>{
                 if(dato.nombre==nuevo.nombre){
                     dato.cantidad++;
                     dato.total = dato.cantidad * dato.precio;
-                    Swal.fire('Agregado al carrito!')
                 }
             })
             localStorage.setItem('arrCarrito', JSON.stringify(arrayCarrito))
         }
     }
-    setTimeout(() => {
-        location.reload()
-    }, 1000);
+    mensajeProdAgregadoAlCarrito()
     mostrarCarrito(arrayCarrito)
 }
 
