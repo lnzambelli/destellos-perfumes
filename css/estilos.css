@@ -1,3 +1,6 @@
+.navbar-brand:hover {
+  color: #ff968a !important; }
+
 footer {
   background-color: #212529;
   padding-top: 2px; }
