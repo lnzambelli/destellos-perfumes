@@ -27,3 +27,20 @@ function enviarDatos(e){
     dato.children[2].children[1].value ="";
     dato.children[3].children[1].value ="";
 }
+
+//OBTENEMOS PROVINCIAS DESDE LA API
+const obtenerProvincias = async () => {
+
+    const respuesta = await (fetch('https://apis.datos.gob.ar/georef/api/provincias'));
+    const listadoProvincias = await respuesta.json();
+    
+    let selectProvincias = document.getElementById("exampleFormControlSelect1");
+    for(let provincia of listadoProvincias.provincias){
+        let {nombre} = provincia
+        let nuevaProv = document.createElement('option');
+        nuevaProv.innerHTML = ` <option>${nombre }</option> `;
+        selectProvincias.append(nuevaProv)
+    }
+}
+
+obtenerProvincias()
