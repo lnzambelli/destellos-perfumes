@@ -22,14 +22,15 @@ const mostrarArray =(arrayListado) => {
 
     for(let perfume of arrayListado){
         let nuevoPerfume = document.createElement('div');
+        let {urlImg,nombre,fragancia,precio} = perfume
         nuevoPerfume.innerHTML = ` <div class="col" >
             <form class="card h-100 formCard">
-            <img src=${perfume.urlImg} class="card-img-top w-50 mx-auto mt-2" alt="...">
+            <img src=${urlImg} class="card-img-top w-50 mx-auto mt-2" alt="...">
             <div class="card-body">
-            <p class="card-title text-center">${perfume.nombre}</p>
-            <p class="card-text text-center">${perfume.fragancia}</p>
+            <p class="card-title text-center">${nombre}</p>
+            <p class="card-text text-center">${fragancia}</p>
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn rounded-pill btnAgregar">$${perfume.precio} <i class="bi bi-cart-plus"></i></button>
+                <button type="submit" class="btn rounded-pill btnAgregar">$${precio} <i class="bi bi-cart-plus"></i></button>
             </div>
             </div>
             </form> 
@@ -39,7 +40,7 @@ const mostrarArray =(arrayListado) => {
 }
 
 /*---------------------------------------------------
-FILTROS
+FILTROS POR CATEGORIA
 ----------------------------------------------------*/
 const filtrarPorCategoria = (categSeleccionada, idListado) =>{
    
@@ -48,15 +49,16 @@ const filtrarPorCategoria = (categSeleccionada, idListado) =>{
     
     arrayFiltro = arrayPerfumes.filter(perf => perf.categoria == categSeleccionada);
     for(let perfume of arrayFiltro){
+        let {urlImg,nombre,fragancia,precio} = perfume
         let nuevoPerfume = document.createElement('div', );
         nuevoPerfume.innerHTML = ` <div class="col" >
             <form class="card h-100 formCard">
-            <img src=${perfume.urlImg} class="card-img-top w-50 mx-auto mt-2 " alt="...">
+            <img src=${urlImg} class="card-img-top w-50 mx-auto mt-2 " alt="...">
             <div class="card-body">
-            <p class="card-title text-center">${perfume.nombre}</p>
-            <p class="card-text text-center">${perfume.fragancia}</p>
+            <p class="card-title text-center">${nombre}</p>
+            <p class="card-text text-center">${fragancia}</p>
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn rounded-pill btnAgregar">$${perfume.precio} <i class="bi bi-cart-plus"></i></button>
+                <button type="submit" class="btn rounded-pill btnAgregar">$${precio} <i class="bi bi-cart-plus"></i></button>
             </div>
             </div>
             </form> 
@@ -65,6 +67,9 @@ const filtrarPorCategoria = (categSeleccionada, idListado) =>{
     }
 }
 
+/*---------------------------------------------------------------
+ELEMENTO OCULTO (NO UTILIZADO) BUSCADOR DE PRODUCTOS POR NOMBRE
+----------------------------------------------------------------*/
 const buscarPorNombre = (nombreDePerfume) =>{
     const arrayEncontrados = arrayPerfumes.filter(perf => perf.nombre == nombreDePerfume.toUpperCase());
     if (arrayEncontrados.length > 0){
@@ -80,7 +85,7 @@ const buscarPorNombre = (nombreDePerfume) =>{
         sumatoria.innerText = `TOTAL: $ ${suma}`;
 
     }else{
-        alert("perfume no encontrado!!")
+        console.log("perfume no encontrado!!")
     }
 }
 
@@ -169,7 +174,7 @@ function obtenerBotonesYEscuchar(){
 obtenerBotonesYEscuchar();
 
 /*---------------------------------------------------
-FUNCION PARA OBTENER INFORMACION DEL PROD
+FUNCION PARA OBTENER INFORMACION DEL PRODUCTO
 ----------------------------------------------------*/
 function enviarDatos(e){
     e.preventDefault();

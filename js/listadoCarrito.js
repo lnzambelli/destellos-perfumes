@@ -10,6 +10,10 @@ window.addEventListener('load', function() {
     mostrarCarrito()
 });
 
+/*---------------------------------------------------
+MOSTRAMOS EL CARRITO O UN MENSAJE DE VACIO
+----------------------------------------------------*/
+
 const mostrarMsjVacio = () =>{
     botonVaciarCarrito.style.display = "none";
     botonConfirmarCarrito.style.display = "none"
@@ -38,6 +42,10 @@ const mostrarCarrito = () =>{
     contenedorCarrito.appendChild(nuevalista);
     obtenerCantidadProductos(miCarrito.length);
 }
+
+/*---------------------------------------------------
+OBTENEMOS PRECIO TOTAL Y CANTIDAD DE ITEMS
+----------------------------------------------------*/
 
 const obtenerCantidadProductos =(cantProd) =>{
     let spanCantProd = document.getElementById('cantProductos');
